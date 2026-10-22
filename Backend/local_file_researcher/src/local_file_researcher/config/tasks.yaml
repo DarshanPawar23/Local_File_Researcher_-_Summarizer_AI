@@ -1,0 +1,32 @@
+
+read_pdf_task:
+  description: >
+    Read the PDF document located at {file_path} using the
+    available read_file tool. Extract the document's text and
+    identify its main topics, important facts, key findings,
+    definitions, dates, statistics, and conclusions.
+    Preserve the meaning of the original content. Do not invent
+    information or use external research. If the document is
+    too long to process completely, clearly identify any
+    limitations in the extracted content.
+  expected_output: >
+    A structured extraction of the PDF content containing the
+    document's main topics, key information, important findings,
+    and conclusions. Include the extracted source text needed
+    by the Writer Agent to prepare a comprehensive report.
+  agent: reader
+
+write_report_task:
+  description: >
+    Use the extracted PDF content from the previous task to
+    create a comprehensive, well-organized Markdown research
+    report. Include an executive summary, introduction, main
+    topics, important findings, relevant facts and statistics,
+    and a conclusion wherever supported by the source.
+    Preserve factual accuracy, avoid repetition, and do not
+    introduce claims that are not supported by the document.
+  expected_output: >
+    A complete Markdown report with clear headings, organized
+    sections, bullet points where appropriate, and a concise
+    conclusion. The report must accurately represent the
+    source document an
